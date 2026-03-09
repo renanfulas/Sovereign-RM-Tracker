@@ -5,6 +5,19 @@ window.SRM.uiRenderers = (function() {
     var formatters = window.SRM.formatters;
     var metrics = window.SRM.metrics;
 
+    function renderCollapsibleCard(className, summaryHtml, bodyHtml, isOpen, syncGroup) {
+        var syncAttribute = syncGroup ? ' data-sync-group="' + syncGroup + '"' : '';
+
+        return '<details class="' + className + ' collapsible-card"' + syncAttribute + (isOpen ? ' open' : '') + '>' +
+            '<summary class="collapsible-summary">' + summaryHtml + '</summary>' +
+            '<div class="collapsible-body">' + bodyHtml + '</div>' +
+        '</details>';
+    }
+
+    function renderGroupedInsightCard(className, summaryHtml, bodyHtml, syncGroup) {
+        return renderCollapsibleCard(className + ' no-indicator-card', summaryHtml, bodyHtml, false, syncGroup);
+    }
+
     function renderEvolutionChart(entriesList) {
         var orderedEntries = entriesList.slice().sort(function(a, b) {
             return new Date(a.createdAt) - new Date(b.createdAt);
@@ -200,42 +213,47 @@ window.SRM.uiRenderers = (function() {
 
         insightsBoard.innerHTML =
             '<section class="dashboard-grid">' +
-                '<article class="metric-card">' +
-                    '<span class="metric-label">Exercicios acompanhados</span>' +
-                    '<strong>' + groups.length + '</strong>' +
-                    '<p>Historico agrupado por exercicio, e nao mais um unico RM isolado.</p>' +
-                '</article>' +
-                '<article class="metric-card">' +
-                    '<span class="metric-label">Total de registros</span>' +
-                    '<strong>' + user.rms.length + '</strong>' +
-                    '<p>Cada novo teste fortalece a leitura da sua evolucao.</p>' +
-                '</article>' +
-                '<article class="metric-card">' +
-                    '<span class="metric-label">Maior PR atual</span>' +
-                    '<strong>' + formatters.formatKg(bestOverall.metrics.best.oneRm) + '</strong>' +
-                    '<p>' + bestOverall.exercise + ' lidera o mural interno de performance.</p>' +
-                '</article>' +
+                renderCollapsibleCard(
+                    'metric-card',
+                    '<div><span class="metric-label">Exercicios medidos</span><span class="metric-value">' + groups.length + '</span></div>',
+                    '<p>Historico agrupado por exercicio, e nao mais um unico RM isolado.</p>',
+                    false,
+                    'metrics-row'
+                ) +
+                renderCollapsibleCard(
+                    'metric-card',
+                    '<div><span class="metric-label">Total de registros</span><span class="metric-value">' + user.rms.length + '</span></div>',
+                    '<p>Cada novo teste fortalece a leitura da sua evolucao.</p>',
+                    false,
+                    'metrics-row'
+                ) +
+                renderCollapsibleCard(
+                    'metric-card',
+                    '<div><span class="metric-label">Maior PR atual</span><span class="metric-value">' + formatters.formatKg(bestOverall.metrics.best.oneRm) + '</span></div>',
+                    '<p>' + bestOverall.exercise + ' lidera o mural interno de performance.</p>',
+                    false,
+                    'metrics-row'
+                ) +
             '</section>' +
             '<section class="insight-grid">' +
-                '<article class="insight-card insight-callout">' +
-                    '<span class="metric-label">Comparacao entre datas</span>' +
-                    '<h3>' + biggestJump + '</h3>' +
-                    '<p>Essa mensagem deixa a evolucao evidente para o aluno, coach ou academia.</p>' +
-                '</article>' +
-                '<article class="insight-card">' +
-                    '<div class="insight-head">' +
-                        '<h3>Ranking interno</h3>' +
-                        '<span>Top PRs</span>' +
-                    '</div>' +
-                    '<ol class="ranking-list">' + rankingItems + '</ol>' +
-                '</article>' +
-                '<article class="insight-card">' +
-                    '<div class="insight-head">' +
-                        '<h3>Mural de PRs</h3>' +
-                        '<span>Ultimas marcas batidas</span>' +
-                    '</div>' +
-                    '<ul class="feed-list">' + prItems + '</ul>' +
-                '</article>' +
+                renderGroupedInsightCard(
+                    'insight-card insight-callout',
+                    '<div><span class="metric-label">Comparacao entre datas</span><h3>Comparacao entre datas</h3></div>',
+                    '<h3>' + biggestJump + '</h3>',
+                    'insights-row'
+                ) +
+                renderGroupedInsightCard(
+                    'insight-card',
+                    '<div class="insight-head"><h3>Ranking interno</h3><span>Top PRs</span></div>',
+                    '<ol class="ranking-list">' + rankingItems + '</ol>',
+                    'insights-row'
+                ) +
+                renderGroupedInsightCard(
+                    'insight-card mural-card',
+                    '<div class="insight-head"><h3>Mural de PRs</h3><span>Ultimas marcas batidas</span></div>',
+                    '<ul class="feed-list">' + prItems + '</ul>',
+                    'insights-row'
+                ) +
             '</section>';
     }
 

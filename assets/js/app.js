@@ -102,6 +102,35 @@
         }, 520);
     }
 
+    function bindSynchronizedCards() {
+        var isSyncing = false;
+
+        document.addEventListener('toggle', function(event) {
+            var target = event.target;
+            var syncGroup;
+            var groupCards;
+
+            if (isSyncing || !target.matches('details[data-sync-group]')) {
+                return;
+            }
+
+            syncGroup = target.getAttribute('data-sync-group');
+
+            if (!syncGroup) {
+                return;
+            }
+
+            groupCards = document.querySelectorAll('details[data-sync-group="' + syncGroup + '"]');
+            isSyncing = true;
+
+            groupCards.forEach(function(card) {
+                card.open = target.open;
+            });
+
+            isSyncing = false;
+        }, true);
+    }
+
     function refreshAppView() {
         var user = entries.getCurrentUserData();
 
@@ -381,6 +410,7 @@
     (function initApp() {
         var loggedInUser = storage.getLoggedInUsername();
 
+        bindSynchronizedCards();
         uiForms.updateEntryPreview(dom);
 
         if (loggedInUser) {
