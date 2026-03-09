@@ -1,3 +1,6 @@
+Vídeo explicativo no YOUTUBE https://www.youtube.com/watch?v=BRCk91LBTwI
+
+
 The science of RM progress — simples, preciso e visual.
 
 Sovereign RM Tracker é uma aplicação web desenvolvida para registrar e acompanhar a evolução dos treinos e cargas máximas (RM) de forma clara e objetiva.
