@@ -1,59 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Python Renan Fulas</title>
-    <!-- Importando fonte moderna 'Poppins' -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Sovereign RM Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="login-page" class="page active">
-        <div class="form-container">
-            <h2>Bem-vindo de volta</h2>
-            <p class="subtitle">Acesse sua conta para continuar</p>
-            <input type="text" id="login-username" placeholder="Usuário ou E-mail" required>
-            <input type="password" id="login-password" placeholder="Senha" required>
-            <button id="login-button">Entrar</button>
-            <p class="switch-page">Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
-        </div>
-    </div>
+    <div class="container">
+        
+        <section id="login-page" class="card active">
+            <h2>Acesso</h2>
+            <input type="text" id="login-username" placeholder="Usuário ou E-mail">
+            <input type="password" id="login-password" placeholder="Senha">
+            <button id="login-button" class="btn-primary">Entrar</button>
+            <p>Não tem uma conta? <a href="#" id="show-register-link">Cadastre-se</a></p>
+        </section>
 
-    <div id="register-page" class="page">
-        <div class="form-container">
-            <h2>Criar Conta</h2>
-            <p class="subtitle">Comece sua jornada hoje</p>
-            <input type="text" id="register-username" placeholder="Nome de Usuário" required>
-            <input type="email" id="register-email" placeholder="E-mail" required>
-            <input type="password" id="register-password" placeholder="Senha" required>
-            <div class="password-requirements">
-                <small>Mínimo 8 caracteres, 1 maiúscula, 1 número, 1 especial.</small>
-            </div>
-            <button id="register-button">Cadastrar</button>
-            <p class="switch-page">Já tem uma conta? <a href="#" id="show-login">Login</a></p>
-        </div>
-    </div>
+        <section id="register-page" class="card hidden">
+            <h2>Cadastro</h2>
+            <input type="text" id="register-username" placeholder="Nome de usuário">
+            <input type="email" id="register-email" placeholder="E-mail">
+            <input type="password" id="register-password" placeholder="Senha">
+            <button id="register-button" class="btn-primary">Cadastrar</button>
+            <p>Já tem uma conta? <a href="#" id="show-login-link">Faça login</a></p>
+        </section>
 
-    <div id="app-page" class="page">
-        <header>
-            <h1>Projeto Python Renan Fulas</h1>
-            <button id="logout-button" class="outline-btn">Sair</button>
-        </header>
-        <main>
-            <div class="rm-input-container">
-                <h3>Registrar Novo RM</h3>
-                <div class="input-group">
-                    <input type="text" id="exercise-name" placeholder="Nome do Exercício (ex: Back Squat)">
-                    <input type="number" id="rm-value" placeholder="1RM em kg (ex: 100)">
+        <section id="app-page" class="card hidden">
+            <header class="app-header">
+                <h2 id="welcome-msg">Meus Treinos</h2>
+                <button id="logout-button" class="btn-small">Sair</button>
+            </header>
+
+            <div class="card add-card">
+                <div class="inline-form">
+                    <input type="text" id="exercise-name" placeholder="Exercício">
+                    <input type="number" id="rm-value" placeholder="Kg">
+                    <button id="save-rm-button">Salvar</button>
                 </div>
-                <button id="save-rm-button">Salvar RM</button>
             </div>
-            <div id="rm-list">
-                <!-- Os RMs salvos aparecerão aqui -->
-            </div>
-        </main>
+
+            <ul id="rm-list" class="rm-list">
+                
+            </ul>
+        </section>
     </div>
 
     <script src="script.js"></script>
