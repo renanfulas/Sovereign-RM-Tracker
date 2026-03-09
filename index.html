@@ -3,50 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign RM Tracker</title>
+    <title>SOVERIGN RM TRACK</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <main class="container">
+        <aside class="brand-panel">
+            <div>
+                <p class="eyebrow">SOVERIGN RM TRACK</p>
+                <h1>Voce nao precisa treinar no escuro.</h1>
+                <p class="brand-copy">
+                    Quantas vezes a avaliacao de performance foi deixada de lado porque:
+                    faltava tempo,
+                    nao havia espaco na agenda,
+                    o processo era burocratico.
+                    <br><br>
+                    O SOVERIGN RM TRACK resolve isso de forma organizada, rapida e simples.
+                </p>
 
-    <div class="container">
-        
-        <section id="login-page" class="card active">
-            <h2>Acesso</h2>
-            <input type="text" id="login-username" placeholder="Usuário ou E-mail">
-            <input type="password" id="login-password" placeholder="Senha">
-            <button id="login-button" class="btn-primary">Entrar</button>
-            <p>Não tem uma conta? <a href="#" id="show-register-link">Cadastre-se</a></p>
-        </section>
+                <div class="impact-strip">
+                    <div>
+                        <strong>5 segundos</strong>
+                        <span>Registro de RM com leitura imediata</span>
+                    </div>
+                    <div>
+                        <strong>1RM estimado</strong>
+                        <span>Calcule performance sem precisar testar 1 repeticao maxima</span>
+                    </div>
+                    <div>
+                        <strong>+ clareza</strong>
+                        <span>Historico visual, comparacao entre datas e mural de PRs</span>
+                    </div>
+                </div>
 
-        <section id="register-page" class="card hidden">
-            <h2>Cadastro</h2>
-            <input type="text" id="register-username" placeholder="Nome de usuário">
-            <input type="email" id="register-email" placeholder="E-mail">
-            <input type="password" id="register-password" placeholder="Senha">
-            <button id="register-button" class="btn-primary">Cadastrar</button>
-            <p>Já tem uma conta? <a href="#" id="show-login-link">Faça login</a></p>
-        </section>
-
-        <section id="app-page" class="card hidden">
-            <header class="app-header">
-                <h2 id="welcome-msg">Meus Treinos</h2>
-                <button id="logout-button" class="btn-small">Sair</button>
-            </header>
-
-            <div class="card add-card">
-                <div class="inline-form">
-                    <input type="text" id="exercise-name" placeholder="Exercício">
-                    <input type="number" id="rm-value" placeholder="Kg">
-                    <button id="save-rm-button">Salvar</button>
+                <div class="message-grid">
+                    <article class="message-card">
+                        <h2>O problema</h2>
+                        <p>
+                            Quando a carga nao progride e nao existe historico,
+                            o atleta perde clareza sobre a propria evolucao e a motivacao cai.
+                        </p>
+                    </article>
+                    <article class="message-card">
+                        <h2>A virada</h2>
+                        <p>
+                            O SOVERIGN RM TRACK transforma registros soltos em acompanhamento continuo,
+                            com leitura visual, comparacao real e progresso facil de mostrar.
+                        </p>
+                    </article>
                 </div>
             </div>
 
-            <ul id="rm-list" class="rm-list">
-                
+            <ul class="benefits-list">
+                <li>Registre o ponto de partida de cada exercicio em segundos.</li>
+                <li>Compare cargas e acompanhe a melhora real do aluno.</li>
+                <li>Ganhe produtividade sem burocracia no atendimento.</li>
+                <li>Transforme avaliacao em rotina, nao em excecao.</li>
             </ul>
+        </aside>
+
+        <section class="workspace-panel">
+            <section id="login-page" class="card auth-card active">
+                <p class="section-tag">Acesso rapido</p>
+                <h2>Entrar no painel</h2>
+                <p class="section-copy">Acompanhe RMs, valide progresso e mantenha o historico do aluno organizado.</p>
+                <input type="text" id="login-username" placeholder="Usuario ou e-mail">
+                <input type="password" id="login-password" placeholder="Senha">
+                <button id="login-button" class="btn-primary">Entrar</button>
+                <p>Primeiro acesso? <a href="#" id="show-register-link">Criar conta</a></p>
+            </section>
+
+            <section id="register-page" class="card auth-card hidden">
+                <p class="section-tag">Criar conta</p>
+                <h2>Comece seu controle</h2>
+                <p class="section-copy">Monte seu ambiente de acompanhamento e registre as marcas dos seus alunos.</p>
+                <input type="text" id="register-username" placeholder="Nome de usuario">
+                <input type="email" id="register-email" placeholder="E-mail">
+                <input type="password" id="register-password" placeholder="Senha forte">
+                <button id="register-button" class="btn-primary">Cadastrar</button>
+                <p>Ja tem conta? <a href="#" id="show-login-link">Fazer login</a></p>
+            </section>
+
+            <section id="app-page" class="card app-shell hidden">
+                <header class="app-header">
+                    <div>
+                        <p class="section-tag">Painel de progresso</p>
+                        <h2 id="welcome-msg">Meus RMs</h2>
+                        <p class="section-copy">Salve levantamentos, estime 1RM por repeticoes e acompanhe sua evolucao por exercicio.</p>
+                    </div>
+                    <button id="logout-button" class="btn-small">Sair</button>
+                </header>
+
+                <div class="app-summary">
+                    <article>
+                        <strong>Clareza</strong>
+                        <span>Veja de onde voce saiu, qual e seu melhor PR e o que mudou desde o ultimo teste.</span>
+                    </article>
+                    <article>
+                        <strong>Velocidade</strong>
+                        <span>Registre exercicio, carga e repeticoes em poucos toques.</span>
+                    </article>
+                    <article>
+                        <strong>Consistencia</strong>
+                        <span>Mantenha o historico visivel e repita o processo com frequencia.</span>
+                    </article>
+                </div>
+
+                <div class="add-card">
+                    <p class="section-tag">Novo registro</p>
+                    <div class="entry-form">
+                        <input type="text" id="exercise-name" class="entry-form-main" placeholder="Exercicio">
+                        <div class="entry-form-row">
+                            <label class="entry-form-field" for="rm-value">
+                                <span class="entry-form-label">KG</span>
+                                <input type="number" id="rm-value" placeholder="Carga" min="1" max="999">
+                            </label>
+                            <label class="entry-form-field" for="reps-value">
+                                <span class="entry-form-label">REP</span>
+                                <input type="number" id="reps-value" placeholder="Repeticoes" min="1" max="15" value="1">
+                            </label>
+                        </div>
+                        <button id="save-rm-button">Salvar</button>
+                    </div>
+                    <p class="form-helper">
+                        Use 1 repeticao para registrar um 1RM direto. Com 2 ou mais repeticoes, o app estima o 1RM automaticamente.
+                    </p>
+                </div>
+
+                <section id="insights-board" class="insights-board"></section>
+
+                <ul id="rm-list" class="rm-list"></ul>
+            </section>
         </section>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

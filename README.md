@@ -1,102 +1,70 @@
-Vídeo explicativo no YOUTUBE https://www.youtube.com/watch?v=BRCk91LBTwI
+# SOVERIGN RM TRACK
 
+Vídeo explicativo no YouTube: https://www.youtube.com/watch?v=BRCk91LBTwI
 
-The science of RM progress — simples, preciso e visual.
+SOVERIGN RM TRACK e uma aplicacao web para registrar cargas maximas e tornar a evolucao dos alunos visivel, rapida e consistente dentro da rotina de academias, coaches e boxes.
 
-Sovereign RM Tracker é uma aplicação web desenvolvida para registrar e acompanhar a evolução dos treinos e cargas máximas (RM) de forma clara e objetiva.
+## Escopo do projeto
 
-Muitos praticantes e treinadores ainda dependem de planilhas desorganizadas ou aplicativos limitados. Este projeto resolve esse problema criando um sistema simples e visual para acompanhar o progresso de força ao longo do tempo.
+Muitas avaliacoes deixam de acontecer porque o processo e demorado, burocratico ou simplesmente nao cabe na operacao. Quando isso acontece, o aluno treina sem clareza sobre o ponto de partida e sem prova concreta da propria evolucao.
 
-🎯 **Problema**
-A maioria das ferramentas de acompanhamento foca apenas em anotações soltas, dificultando a análise real da evolução.
+O SOVERIGN RM TRACK usa a mesma ideia-base de ganho de produtividade aplicada ao contexto de performance e forca:
 
-Por exemplo:
-- aumento de carga pode ser progresso
-- ou erro de anotação
-- ou falta de controle
-- Sem dados adequados, é difícil interpretar o progresso real.
+- reduzir o tempo gasto no registro de RMs
+- facilitar avaliacoes frequentes
+- dar visibilidade para a melhora do aluno
+- aumentar a capacidade de atendimento ao longo do dia
+- transformar dados de treino em motivacao e decisao
 
-💡 **Solução**
-O Sovereign RM Tracker permite registrar cada exercício, carga máxima (RM) e visualizar a evolução de forma prática e visual.
+Se voce nao sabe como o aluno estava antes e como ele evoluiu, fica dificil provar resultado. O app existe para resolver isso com um fluxo simples e intuitivo.
 
-O sistema permite:
-- registrar treinos e exercícios
-- acompanhar histórico de RM
-- visualizar gráficos de evolução
-- analisar mudanças reais na performance
+## Proposta de valor
 
-⚙️ **Tecnologias utilizadas**
-O projeto foi desenvolvido com uma stack simples e eficiente:
+- registrar exercicios e cargas maximas em segundos
+- consultar rapidamente o percentual de carga a partir do 1RM
+- manter historico por usuario com data e horario
+- tornar a evolucao clara para aluno e profissional
+- aumentar produtividade sem depender de planilhas confusas
 
-**Frontend**
+## Impacto direto na rotina
+
+Com um processo enxuto, o acompanhamento deixa de ser um gargalo:
+
+- cerca de 5 minutos por avaliacao ou registro relevante
+- possibilidade de varias avaliacoes por hora
+- mais alunos acompanhados por dia
+- mais constancia no monitoramento de performance
+
+## Tecnologias utilizadas
+
 - HTML5
-- CSS3 (design moderno e responsivo)
-- JavaScript (interatividade e navegação)
+- CSS3
+- JavaScript
+- LocalStorage e SessionStorage para persistencia local
 
-✨ **Funcionalidades**
+## Funcionalidades atuais
 
-**Gestão de usuários**
-- cadastro e login
-- organização dos treinos por usuário
+- cadastro de usuario
+- login por nome de usuario ou e-mail
+- validacao basica de senha
+- registro de exercicio com valor de 1RM
+- historico individual salvo localmente
+- calculo rapido de carga por percentual
 
-**Registro de treinos**
-- cadastro de exercícios
-- registro de RM (carga máxima)
+## Como executar
 
-**Histórico de treinos**
-- armazenamento dos registros por data
-- fácil navegação entre registros anteriores
+1. Abra a pasta do projeto.
+2. Execute o arquivo index.html no navegador.
+3. Crie uma conta e comece a registrar os RMs.
 
-**Dashboard de evolução**
-- visualização dos treinos
-- gráficos de evolução (em breve)
+## Melhorias futuras
 
-**Interface interativa**
-- seleção de registros antigos
-- atualização automática dos dados
+- edicao e exclusao de registros
+- graficos de evolucao
+- filtros por periodo
+- exportacao de relatorios
+- modo multi-profissional para studios e academias
 
-📊 **Exemplo de uso**
-Fluxo típico dentro do sistema:
-1. cadastrar um usuário
-2. registrar um exercício e RM
-3. visualizar automaticamente os registros
-Isso permite ao praticante ou treinador acompanhar se o progresso está acontecendo.
+## Resultado esperado
 
-🚀 **Como rodar o projeto localmente**
-Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/sovereign-rm-tracker.git
-```
-
-Entre na pasta do projeto:
-
-```bash
-cd sovereign-rm-tracker
-```
-
-Abra o arquivo `index.html` no navegador.
-
-🧠 **Desafios de desenvolvimento**
-Durante o desenvolvimento, um dos principais desafios foi garantir a boa UI/Interface e experiência do usuário onde que
-os botões aconteciam muitos erros.
-
-Para resolver isso, implementei:
-- Uma simplificação da ideia o que tornou o projeto mais funcional e melhor ainda do que eu havia pensado de primeiro
-
-📚 **Aprendizados**
-Este projeto foi importante para praticar:
-- estruturação de aplicações web com HTML, CSS e JS
-- manipulação de DOM
-- navegação SPA simples
-- prevenção de problemas comuns de formulário web
-
-🔮 **Possíveis melhorias futuras**
-- gráficos interativos de evolução
-- autenticação de múltiplos usuários
-- exportação de relatórios
-- uma IA para dar dicas de progressão
-- deploy online da aplicação
-
-✅ **Resultado:**
-Um sistema simples e funcional que demonstra como dados de treino e RM podem ser organizados e analisados de forma clara.
+Um app simples, direto e funcional para que o acompanhamento de forca nao seja negligenciado e para que o progresso do aluno fique visivel em cada ciclo de treino.
